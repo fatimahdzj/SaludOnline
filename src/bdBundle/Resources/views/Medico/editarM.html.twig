@@ -1,0 +1,53 @@
+{% extends "frontend.html.twig"%}
+{% block body %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.min.css') }}">
+           <link rel="stylesheet" href="{{ asset('public/fonts/Roboto') }}">
+             <link rel="stylesheet" href="{{ asset('public/js/materialize.js') }}">
+             <link rel="stylesheet" href="{{ asset('public/js/materialize.min.js') }}">
+    {% endblock %}
+
+<h2>Modificar Médicos</h2>
+ <nav>
+    <div class="nav-wrapper teal darken-3">
+      <div class="col s12">
+        <a href="{{asset('indexmedico')}}" class="breadcrumb">Listado de Médicos</a>
+         <a href="{{asset('editarMmedico')}}" class="breadcrumb">Modificar Médicos</a>
+      </div>
+    </div>
+  </nav>
+{{form_start(form)}}
+<p>
+   Nombre:
+   {{form_widget(form.nommed)}}
+</p>
+<p>
+   Telefono:
+   {{form_widget(form.telefono)}}
+</p>
+<p>
+  Consultorio:
+   {{form_widget(form.consultorio)}}
+</p>
+<p>
+   Especialidad:
+   {{form_widget(form.idesp)}}
+</p>
+<p>
+   Servicio:
+   {{form_widget(form.idserv)}}
+</p>
+<hr/>
+<p>
+   {{form_widget(form.Aceptar)}}
+</p>
+
+{{form_end(form)}}
+<form class="form-horizontal" role="form" method="post">
+       <div class="form-group">
+                <a class="clase" href="{{ path('bd_homepageindexmedico') }}" class="btn btn-default form-control" id="Cancelar">Cancelar</a>
+            </div>
+</form>
+{% endblock %}
+

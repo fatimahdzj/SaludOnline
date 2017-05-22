@@ -1,0 +1,16 @@
+bdBundle\Entity\Servicio:
+    type: entity
+    table: null
+    repositoryClass: bdBundle\Repository\ServicioRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomserv:
+            type: string
+            length: '100'
+            unique: true
+    lifecycleCallbacks: {  }

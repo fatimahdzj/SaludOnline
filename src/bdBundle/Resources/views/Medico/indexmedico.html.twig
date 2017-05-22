@@ -1,0 +1,67 @@
+{% extends "frontend.html.twig"%}
+{% block body %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.min.css') }}">
+           <link rel="stylesheet" href="{{ asset('public/fonts/Roboto') }}">
+             <link rel="stylesheet" href="{{ asset('public/js/materialize.js') }}">
+             <link rel="stylesheet" href="{{ asset('public/js/materialize.min.js') }}">
+             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% endblock %}
+
+<h1 align="center">Listado de Médicos</h1>
+<nav>
+    <div class="nav-wrapper teal darken-3">
+      <div class="col s12">
+        <a href="{{asset('indexas')}}" class="breadcrumb">Menú</a>
+         <a href="{{asset('indexmedico')}}" class="breadcrumb">Listado de Médicos</a>
+      </div>
+    </div>
+  </nav>
+{% for flashMessage in app.session.flashbag.get('mensaje')%}
+<span class="alert-success">
+    {{flashMessage}}
+    <hr/>
+    </span>
+<div class="card-action right">
+{% endfor %}
+    <hr><hr>
+    <a href="{{asset('medico')}}" title="Agregar" class="red-text" ><b>Agregar</b></a>
+<div class="card-action right">
+    <a href="{{asset('reportes')}}" title="Agregar" class="red-text"><b>Generar Reporte </b></a>
+</div>
+
+<table class="striped cyan accent-1" class="bordered">
+        <thead>
+          <tr>
+              <th data-field="nombre">Nombre</th>
+              <th data-field="telefono">Teléfono</th>
+              <th data-field="consultorio">Consultorio</th>
+              <th data-field="especialidad">Especialidad</th>
+              <th data-field="servicio">Servicio</th>
+              <th data-field="acciones">Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {% for dato in datos%}
+          <tr>
+            <td> {{dato.nommed}}</td>
+            <td>{{dato.telefono}}</td>
+            <td>{{dato.consultorio}}</td>
+             <td>{{dato.nomesp}}</td>
+             <td>{{dato.nomserv}}</td>
+          <td>
+            <a href="{{asset('editarM')}}/{{dato.id}}" title="Modificar">Modificar</a>---
+             <a href="{{asset('eliminarM')}}/{{dato.id}}" title="Agregar">Eliminar</a>
+          </td>
+          {%endfor%}
+        </tbody>
+      </table>
+<nav>
+<div class="nav-wrapper teal darken-3" >
+    <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
+</div>
+</nav>
+{% endblock %}
+

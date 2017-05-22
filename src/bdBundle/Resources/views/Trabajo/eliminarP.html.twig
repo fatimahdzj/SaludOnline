@@ -1,0 +1,51 @@
+{% extends "frontend.html.twig"%}
+{% block body %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.min.css') }}">
+           <link rel="stylesheet" href="{{ asset('public/fonts/Roboto') }}">
+             <link rel="stylesheet" href="{{ asset('public/js/materialize.js') }}">
+             <link rel="stylesheet" href="{{ asset('public/js/materialize.min.js') }}">
+    {% endblock %}
+
+<h1>¿Estas seguro que deseas eliminar esta cuenta permanentemente?</h1>
+{% for flashMessage in app.session.flashbag.get('mensaje')%}
+<span class="alert-success">
+    {{flashMessage}}
+    <hr/>
+    </span>
+{% endfor %}
+{{form_start(form)}}
+<p>
+   Nombre usuario:
+   {{form_widget(form.nomusr)}}
+</p>
+<p>
+   Nombre:
+   {{form_widget(form.nomcom)}}
+</p>
+<p>
+  Número de afiliacion:
+   {{form_widget(form.numafil)}}
+</p>
+<p>
+   Teléfono:
+   {{form_widget(form.telefono)}}
+</p>
+<p>
+  Correo Electrónico:
+   {{form_widget(form.email)}}
+</p>
+<p>
+  CURP:
+   {{form_widget(form.curp)}}
+</p>
+
+<hr/>
+<p>
+
+   {{form_widget(form.Aceptar)}}
+</p>
+{{form_end(form)}}
+
+{% endblock %}

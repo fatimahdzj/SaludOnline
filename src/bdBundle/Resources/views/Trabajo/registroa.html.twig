@@ -1,0 +1,59 @@
+{% extends '::frontend.html.twig' %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Centro Salud{% endblock %}</title>
+</head>
+<body>
+<div class="col-lg-3">
+    <form>
+        <h2 align="center">Bienvenido al Registro de Médicos</h2>
+        <div class="form-group">
+            <label for="usuario">Nombre de Usuario:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="User">
+        </div>
+        <div class="form-group">
+            <label for="pass">Contraseña:</label>
+            <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+        </div>
+         <div class="form-group">
+            <label for="usuario">Nombre completo:</label>
+            <input type="text" class="form-control" id="nomcom" name="nomcom" placeholder="Nombre Completo">
+        </div>
+          <div class="form-group">
+            <label for="numtra">Número del trabajador:</label>
+            <input type="text" class="form-control" id="numtra" name="numtra" placeholder="Numero de trabajador">
+        </div>
+         <div class="form-group">
+            <label for="numafil">CURP:</label>
+            <input type="text" class="form-control" id="curp" name="curp" placeholder="CURP">
+        </div>
+         <div class="form-group">
+            <label for="numafil">Teléfono:</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
+        </div>
+         <div class="form-group">
+            <label for="numafil">E-mail:</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electrónico">
+        </div>
+         <div class="form-group">
+            <label for="numafil">tipo:</label>
+            <input type="text" class="form-control" id="idtipo" name="idtipo" placeholder="Corr">
+        </div>
+        
+        <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Registrar</button>
+        </div>
+        </div>
+        <hr/>
+        <div class="form-group">
+            <a href="{{ path('bd_homepagelogin') }}" class="btn btn-default form-control" id="Cancelar">Cancelar</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+{% endblock %}

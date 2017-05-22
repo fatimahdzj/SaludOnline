@@ -1,0 +1,32 @@
+{% extends "frontend.html.twig"%}
+{% block body %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/fonts/Roboto') }}">
+        <link rel="stylesheet" href="{{ asset('public/js/materialize.js') }}">
+        <link rel="stylesheet" href="{{ asset('public/js/materialize.min.js') }}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% endblock %}
+             
+
+<h2>Bienvenido Paciente</h2>
+<nav>
+    <div class="nav-wrapper  teal darken-3 ">
+      <a href="{{path('bd_homepagelogin')}}" class="brand-logo right">Cerrar sesión</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="{{asset('perfilpac')}}/{{id}}">Perfil</a></li>
+        <li><a href="badges.html">Consultas</a></li>
+        <li><a href="collapsible.html">Medicos</a></li>
+         <li><a href="medicos.html">Informacion</a></li>
+      </ul>
+    </div>
+  </nav>
+<hr>
+<div class="container" align="center">
+         <img align="center" src="{{asset('public/imagen/Imagen4.png')}}"/>
+</div>
+
+
+{% endblock %}
+

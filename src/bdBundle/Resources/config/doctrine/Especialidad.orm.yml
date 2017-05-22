@@ -1,0 +1,16 @@
+bdBundle\Entity\Especialidad:
+    type: entity
+    table: null
+    repositoryClass: bdBundle\Repository\EspecialidadRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomesp:
+            type: string
+            length: '100'
+            unique: true
+    lifecycleCallbacks: {  }

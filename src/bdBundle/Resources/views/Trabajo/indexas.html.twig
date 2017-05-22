@@ -1,0 +1,33 @@
+{% extends "frontend.html.twig"%}
+{% block body %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.min.css') }}">
+           <link rel="stylesheet" href="{{ asset('public/fonts/Roboto') }}">
+             <link rel="stylesheet" href="{{ asset('public/js/materialize.js') }}">
+             <link rel="stylesheet" href="{{ asset('public/js/materialize.min.js') }}">
+    {% endblock %}
+
+<h2 align="center">Bienvenido Asistente Administrador</h2>
+<nav>
+    <div class="nav-wrapper teal darken-3" >
+      <a href="{{ path('bd_homepagelogin')}}" class="brand-logo right">Cerrar sesión</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href={{ path('bd_homepageperfilas') }}>Perfil</a></li>
+        <li><a href={{ path('bd_homepageindexmedico') }}>Medicos</a></li>
+         <li><a href="medicos.html">Agregar Consulta</a></li>
+      </ul>
+    </div>
+  </nav>
+<hr>
+<div class="container" align="center">
+         <img align="center" src="{{asset('public/imagen/Imagen4.png')}}"/>
+</div>
+<nav>
+<div class="nav-wrapper teal darken-3" >
+    <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
+</div>
+</nav>
+
+{% endblock %}
+

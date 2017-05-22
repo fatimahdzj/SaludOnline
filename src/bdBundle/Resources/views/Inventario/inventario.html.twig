@@ -1,0 +1,43 @@
+{% extends "frontend.html.twig"%}
+{% block body %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.min.css') }}">
+           <link rel="stylesheet" href="{{ asset('public/fonts/Roboto') }}">
+             <link rel="stylesheet" href="{{ asset('public/js/materialize.js') }}">
+             <link rel="stylesheet" href="{{ asset('public/js/materialize.min.js') }}">
+    {% endblock %}
+
+<h1>Inventario</h1>
+<table class="table">
+    <tbody>
+        <th>
+          Producto
+        </th>
+        <th>
+          Existencia
+        </th>
+        <th>
+          Costo
+        </th>
+        <th>
+         Valor total
+        </th>
+    </tbody>
+
+    {%for dato in datos%}
+    
+    <tr>
+        <td>{{dato.nomprod}}</td>  
+         <td>{{dato.existensia}}</td>  
+          <td>${{dato.costo}}</td>  
+           <td>${{dato.valorinv}}</td>  
+           <td>${%sum=dato.valorinv%}</td>  
+    </tr>
+     
+  
+    {%endfor%}
+  
+</table>
+  <p>{{sum}}</p>
+{% endblock %}

@@ -1,0 +1,26 @@
+bdBundle\Entity\Medico:
+    type: entity
+    table: null
+    repositoryClass: bdBundle\Repository\MedicoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nommed:
+            type: string
+            length: '100'
+            unique: true
+        telefono:
+            type: string
+            length: '10'
+        consultorio:
+            type: integer
+            unique: true
+        idesp:
+            type: integer
+        idserv:
+            type: integer
+    lifecycleCallbacks: {  }

@@ -1,0 +1,33 @@
+{% extends "frontend.html.twig"%}
+{% block body %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.min.css') }}">
+           <link rel="stylesheet" href="{{ asset('public/fonts/Roboto') }}">
+             <link rel="stylesheet" href="{{ asset('public/js/materialize.js') }}">
+             <link rel="stylesheet" href="{{ asset('public/js/materialize.min.js') }}">
+    {% endblock %}
+<table class="striped cyan accent-1" class="bordered">
+        <thead>
+          <tr>
+              <th data-field="nombre">Nombre</th>
+              <th data-field="telefono">Teléfono</th>
+              <th data-field="consultorio">Consultorio</th>
+              <th data-field="especialidad">Especialidad</th>
+              <th data-field="servicio">Servicio</th>
+              <th data-field="acciones">Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            {% for dato in datos%}
+          <tr>
+            <td> {{dato.nommed}}</td>
+            <td>{{dato.telefono}}</td>
+            <td>{{dato.consultorio}}</td>
+          
+          {%endfor%}
+        </tbody>
+      </table>
+{% endblock %}
+

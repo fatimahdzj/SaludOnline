@@ -1,0 +1,63 @@
+{% extends "::frontend.html.twig"%}
+{% block body %}
+{% for flashMessage in app.session.flashbag.get('notice') %}
+    <div class="flash-notice">
+        {{ flashMessage }}
+    </div>
+{% endfor %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/fonts/Roboto') }}">
+        <link rel="stylesheet" href="{{ asset('public/js/materialize.js') }}">
+        <link rel="stylesheet" href="{{ asset('public/js/materialize.min.js') }}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}       
+        <div class="card-panel  teal darken-3">
+          <h2 class="white-text text-white" align="center"><b>Bienvenido al Sistema de Citas Online</h2>
+        </div>
+{% for flashMessage in app.session.flashbag.get('mensaje')%}
+        <span class="alert-success">
+          {{flashMessage}}
+        <hr/>
+        </span>
+{% endfor %}
+<div class="container">
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <div class="card z-depth-4">
+        <div class="card-content">
+<div class="container" align="center">
+         <img align="center" src="{{asset('public/imagen/logo.png')}}"/>
+</div>
+<hr/>
+<form class="form-horizontal" role="form" method="post" action="{{path('bd_homepagelogin')}}">
+  <div class="form-group">
+        <label  for="inputEmail3" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+          <input type="text"  align="center"  name="nomusr" class="form-control" id="inputEmail3" placeholder="Usuario" />
+        </div>
+  </div>
+  <div class="form-group">
+        <label for="inputPassword3"   align="center" class="col-sm-2 control-label"></label>
+        <div class="col-sm-10">
+          <input type="password" name="pass" align="center"  class="form-control" id="inputPassword3" placeholder="Contraseña" />
+        </div>
+  </div>
+  <div class="form-group">
+    <div class="card-action center">
+         <button class="btn waves-effect red darken-4" align="center" type="submit" >Entrar
+           <i class="material-icons right"></i>
+         </button>
+    </div>
+  </div>
+  <div class="form-group" align="center">
+      <a class="clase green-text text-darken-4" href="{{ path('bd_homepageafiliacion') }}" class="btn btn-default form-control" id="Registrar">Registrar</a>
+  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</form>
+{% endblock %}

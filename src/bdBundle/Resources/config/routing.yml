@@ -1,0 +1,75 @@
+bd_homepage:
+    path:     /home
+    defaults: { _controller: bdBundle:Trabajo:indexpac }
+    
+bd_homepagelogin:
+    path:     /login
+    defaults: { _controller: bdBundle:Trabajo:login }
+    
+bd_homepageRegistrar:
+    path:     /Registrar
+    defaults: { _controller: bdBundle:Trabajo:Registrar }
+    
+bd_homepageregistroa:
+    path:     /registroa
+    defaults: { _controller: bdBundle:Trabajo:registroa }
+
+bd_homepageregistrosa:
+    path:     /registrosa
+    defaults: { _controller: bdBundle:Trabajo:registrosa }
+    
+bd_homepageindexas:
+    path:     /indexas
+    defaults: { _controller: bdBundle:Trabajo:indexas }
+    
+bd_homepageperfilpac:
+    path:     /perfilpac/{id}
+    defaults: { _controller: bdBundle:Trabajo:perfilpac }
+    
+bd_homepageperfilas:
+    path:     /perfilas
+    defaults: { _controller: bdBundle:Perfil:perfilas }
+    
+bd_homepageafiliacion:
+    path:     /afiliacion
+    defaults: { _controller: bdBundle:Perfil:afiliacion }
+    
+bd_homepagemedico:
+    path:     /medico
+    defaults: { _controller: bdBundle:Medico:medico }
+    
+bd_homepageindexmedico:
+    path:     /indexmedico
+    defaults: { _controller: bdBundle:Medico:indexmedico }
+    
+bd_homepageeditarM:
+    path:     /editarM/{id}
+    defaults: { _controller: bdBundle:Medico:editarM }
+    
+bd_homepageeliminarM:
+    path:     /eliminarM/{id}
+    defaults: { _controller: bdBundle:Medico:eliminarM }
+    
+bd_homepageeditarP:
+    path:     /editarP/{id}
+    defaults: { _controller: bdBundle:Trabajo:editarP } 
+ 
+bd_homepageliminarP:
+    path:     /eliminarP/{id}
+    defaults: { _controller: bdBundle:Trabajo:eliminarP }
+    
+bd_homepagereportes:
+    path:     /reportes
+    defaults: { _controller: bdBundle:Reportes:reportes }
+    
+bd_homepageespecialidad:
+    path:     /especialidad
+    defaults: { _controller: bdBundle:Medico:especialidad }
+ 
+bd_homepageinventario:
+    path:     /inventario
+    defaults: { _controller: bdBundle:Inventario:inventario }
+    
+    
+
+

@@ -1,0 +1,22 @@
+bdBundle\Entity\Inventario:
+    type: entity
+    table: null
+    repositoryClass: bdBundle\Repository\InventarioRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nomprod:
+            type: string
+            length: '50'
+            unique: true
+        existensia:
+            type: integer
+        costo:
+            type: float
+        valorinv:
+            type: float
+    lifecycleCallbacks: {  }

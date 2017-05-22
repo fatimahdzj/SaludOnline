@@ -1,0 +1,56 @@
+{% extends "frontend.html.twig"%}
+{% block body %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.min.css') }}">
+           <link rel="stylesheet" href="{{ asset('public/fonts/Roboto') }}">
+             <link rel="stylesheet" href="{{ asset('public/js/materialize.js') }}">
+             <link rel="stylesheet" href="{{ asset('public/js/materialize.min.js') }}">
+    {% endblock %}
+
+<h1>Modificar Datos</h1>
+{% for flashMessage in app.session.flashbag.get('mensaje')%}
+<span class="alert-success">
+    {{flashMessage}}
+    <hr/>
+    </span>
+{% endfor %}
+{{form_start(form)}}
+<p><b>
+        Nombre usuario:</b>
+   {{form_widget(form.nomusr)}}
+</p>
+<p><b>
+   Contraseña:</b>
+   {{form_widget(form.pass)}}
+</p>
+<p><b>
+   Nombre:</b>
+   {{form_widget(form.nomcom)}}
+</p>
+<p><b>
+  Número de afiliacion:</b>
+   {{form_widget(form.numafil)}}
+</p>
+<p><b>
+   Teléfono:</b>
+   {{form_widget(form.telefono)}}
+</p>
+<p><b>
+  Correo Electrónico:</b>
+   {{form_widget(form.email)}}
+</p>
+<p><b>
+  CURP:</b>
+   {{form_widget(form.curp)}}
+</p>
+
+<hr/>
+<p>
+<div class="center">
+   {{form_widget(form.Aceptar)}}
+</div>
+</p>
+{{form_end(form)}}
+
+{% endblock %}

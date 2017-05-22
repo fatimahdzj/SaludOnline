@@ -1,0 +1,112 @@
+{% extends "frontend.html.twig"%}
+{% block body %}
+{% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/materialize.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/fonts/Roboto') }}">
+
+    {% endblock %}
+
+<h2 align="center">Agregar Médicos</h2>
+ <nav>
+    <div class="nav-wrapper teal darken-3">
+      <div class="col s12">
+        <a href="{{asset('indexmedico')}}" class="breadcrumb">Listado de Médicos</a>
+         <a href="{{asset('medico')}}" class="breadcrumb">Agregar Médico</a>
+      </div>
+    </div>
+  </nav>
+<body>
+   
+<div class="col-lg-3">
+    <form class="form-horizontal" role="form" method="post" action="{{path('bd_homepagemedico')}}">
+        <div class="container" align="center">
+        <div class="row">
+        <div class="form-group">
+            <label for="usuario"></label>
+            <input type="text" class="form-control" id="nomusr" name="nommed" placeholder="Nombre">
+        </div>
+        <div class="form-group">
+            <label for="usuario"></label>
+            <input type="text" class="form-control" id="pass" name="telefono" placeholder="Telefono">
+        </div>
+         <div class="form-group">
+            <label for="usuario"></label>
+            <input type="text" class="form-control" id="nomcom" name="consultorio" placeholder="Consultorio">
+        </div>
+        </div>
+            </div>
+        <div class="container" align="center">
+             <h4  for="inputseleccion" class="col-sm-2 control-label"><b>Selecciona la especialidad</b></h4>
+    <p>
+      <input name="gral" type="radio" id="gral" />
+      <label for="gral" align="center">Medico General</label>
+    </p>
+    <p>
+      <input name="nutri" type="radio" id="nutri" />
+      <label for="nutri">Nutriologo</label>
+    </p>
+     <p>
+      <input name="gine" type="radio" id="gine" />
+      <label for="gine">Ginecologo</label>
+    </p>
+   
+        </div>
+    
+    <hr>
+     <hr>
+
+<div class="container" align="center">
+  <div class="row">
+   
+    <h4  for="inputseleccion" class="col-sm-2 control-label"><b>Selecciona el servicio</b></h4>
+    <p>
+      <input name="Cgral" type="radio" id="Cgral" />
+      <label for="Cgral" align="center">Consulta General</label>
+    </p>
+    <p>
+      <input name="Cnutri" type="radio" id="Cnutri" />
+      <label for="Cnutri">Control de peso</label>
+    </p>
+     <p>
+      <input name="Cgine" type="radio" id="Cgine" />
+      <label for="Cgine">Papanicolao</label>
+    </p>
+   
+</div>
+        </div>
+        </div>
+       <hr>
+     <hr>
+   
+        <div class="form-group" align="center">
+        <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Registrar</button>
+        
+        </div>
+        </div>
+     <hr>
+       
+     
+    </form>
+</div>
+    <nav>
+<div class="nav-wrapper teal darken-3" >
+    <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
+</div>
+</nav>
+</body>
+</html>
+
+<script>
+     $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
+{%block javascript%}
+        <script type="application/javascript" scr="{{ asset('public/js/materialize.js') }}" ></script>  
+        <script type="application/javascript" src="{{ asset('public/js/materialize.min.js') }}"></script>
+         <script type="application/javascript" src="{{ asset('public/js/jquery.js') }}"></script>
+      
+        {%endblock%}
+{% endblock %}

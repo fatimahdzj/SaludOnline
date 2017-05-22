@@ -1,0 +1,16 @@
+bdBundle\Entity\Tipousu:
+    type: entity
+    table: null
+    repositoryClass: bdBundle\Repository\TipousuRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        tipousuario:
+            type: string
+            length: '100'
+            unique: true
+    lifecycleCallbacks: {  }
